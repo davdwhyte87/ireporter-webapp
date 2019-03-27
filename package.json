@@ -1,0 +1,29 @@
+{
+  "name": "ireporter-webapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/davdwhyte87/ireporter-webapp.git",
+  "author": "David whyte <kingstonwhyte87@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.0",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "style-loader": "^0.23.1",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "7",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
