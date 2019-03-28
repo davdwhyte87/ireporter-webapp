@@ -1,7 +1,21 @@
-import React from 'react';
+import React from 'react'
 import ReactDOM from 'react-dom'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import Root from '../src/components/Root'
+import Home from '../src/components/Home'
 
-const Index = () => {
-return <div>Hello man</div>
-};
-ReactDOM.render(<Index/>, document.getElementById("index"))
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Router>
+          <Root>
+            <Route exact path="/" component={Home}/>
+          </Root>
+        </Router>
+      </div>
+    );
+  }
+}
+ReactDOM.render(<App/>, document.getElementById("index"))
