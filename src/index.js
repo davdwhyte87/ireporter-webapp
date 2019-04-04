@@ -22,6 +22,7 @@ class App extends React.Component {
           <Router>
             <Root>
               <Route exact path="/" component={Home}/>
+              {/* <Route path="/signup" component={} /> */}
             </Root>
           </Router>
         </div>
