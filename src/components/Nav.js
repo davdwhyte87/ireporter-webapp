@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Link } from 'react-router-dom'
 
 class Nav extends React.Component{
   authCheckUser() {
@@ -45,7 +46,7 @@ class Nav extends React.Component{
           <ul id="l-nav">
               <li><a className="active" href="index.html">Home</a></li>
               <li><a href="sign-in.html">Signin</a></li>
-              <li><a href="sign-up.html">Signup</a></li>
+              <li><Link to="/signup">Signup</Link></li>
           </ul>
           <ul id="r-nav">
           </ul>  
