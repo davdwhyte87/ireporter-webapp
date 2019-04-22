@@ -41,7 +41,10 @@ class Signup extends React.Component{
    
   };
   render() {
-  console.log(this.props.isError)
+  console.log(this.props)
+  if (this.props.success) {
+    this.props.history.push('/')
+  }
     const { email, password } = this.state.data;
     return (
       <div>
@@ -76,9 +79,8 @@ class Signup extends React.Component{
                         <input type="password" name="password" onChange={this.handleChange}  className="input" required="" placeholder="Password" />
                       </div>
                       <div className="container-center">
-                        <button type="submit" id="signup_btn" className="btn-primary" onClick={this.handleSignin}>Signup <i className="fa fa-fw fa-edit"></i></button>
+                        <button type="submit" id="signup_btn" className="btn-primary" onClick={this.handleSignin}>{ this.props.loading? 'loading...': 'Signup'}<i className="fa fa-fw fa-edit"></i></button>
                       </div>
-                      { this.props.errors}
                         <p>Already have an account? <a href="sign-in.html">Signin</a></p>
                     </form>
                   </div>
@@ -98,7 +100,9 @@ const mapStateToProps = state => {
   return {
     users: state.users,
     user: state.user,
-    errors: state.errors
+    errors: state.errors,
+    loading: state.loading,
+    success: state.success
   }
 }
 export default connect(() => mapStateToProps, { getUsers, signUpUser })(withRouter(Signup))

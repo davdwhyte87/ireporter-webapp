@@ -9,6 +9,10 @@ class Alert extends React.PureComponent{
         if(onDismiss) onDismiss()
     }
     render(){
+      console.log(this.props)
+      if(!this.props.message){
+        return ('')
+      }
       let errorMessages = []
       let i = 0
       for (i; i<this.props.message.length; i++){

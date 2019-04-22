@@ -16,19 +16,32 @@ export const getUsers = () => {
 }
 
 export const signUpUser = (userData) => {
+
   return async (dispatch) => {
+    dispatch({
+      type: 'LOADING',
+      payload: { loading: true }
+    })
     try {
-      const { data } = await axios.post('https://ireporterx.herokuapp.com/api/v1/auth/signup/', userData);
+      const { data: { data } } = await axios.post('https://ireporterx.herokuapp.com/api/v1/auth/signup/', userData);
+      //save token data on browser
       console.log(data)
+      localStorage.setItem('token', data[0].token)
+      localStorage.setItem('user', JSON.stringify(data[0].user))
+      // send data to reducer
       dispatch({
         type: 'SIGNUP_USER',
-        user: {}
+        payload: { loading: false, token: data.token, success: true }
       })
     } catch (e) {
-      const errors = e.response.data.error
+      let errors;
+      errors = ["An error occurred"]
+      if (e.response) {
+        errors = e.response.data.error
+      }
       dispatch({
         type: 'SIGNUP_ERROR',
-        errors: errors 
+        payload: { errors: errors, loading: false }
       })
     }
   } 
