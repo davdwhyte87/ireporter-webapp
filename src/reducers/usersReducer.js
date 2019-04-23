@@ -17,6 +17,10 @@ export default (state = initialState, action = {}) => {
       return { token: action.payload.token, loading: action.payload.loading, success: action.payload.success }
     case 'SIGNUP_ERROR':
       return { errors: action.payload.errors, loading: action.payload.loading }
+    case 'SIGNIN_USER':
+      return { token: action.payload.token, loading: action.payload.loading, success: action.payload.success }
+    case 'SIGNIN_ERROR':
+      return { errors: action.payload.errors, loading: action.payload.loading }
     default:
       return state
   }
