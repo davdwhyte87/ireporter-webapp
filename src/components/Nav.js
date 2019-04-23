@@ -22,7 +22,9 @@ class Nav extends React.Component{
   }
 
   logout(e) {
-
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    this.props.history.push('/')
   }
   render() {
     if(this.authCheckUser()) {
@@ -50,8 +52,8 @@ class Nav extends React.Component{
         <nav className="navbar" id="navbar">
           <a href="#" onClick={this.toggleNav} className='nav-mobile'>☰ menu</a>
           <ul id="l-nav">
-              <li><a className="active" href="index.html">Home</a></li>
-              <li><a href="sign-in.html">Signin</a></li>
+              <li><Link className="active" to="/">Home</Link></li>
+              <li><Link to="/signin">Signin</Link></li>
               <li><Link to="/signup">Signup</Link></li>
           </ul>
           <ul id="r-nav">

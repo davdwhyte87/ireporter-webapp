@@ -35,13 +35,13 @@ class Alert extends React.PureComponent{
         }
         return(
           <div id="errf" className="alert error alert-success alert-dismissible fade show" role="alert">
-            <strong>Success!</strong> {this.props.message} 
+            <strong>Error!</strong> {this.props.message} 
           </div>
         )
       }
       return (
         <div id="errf" className="alert success alert-success alert-dismissible fade show" role="alert">
-        <strong>Success!</strong> {this.props.message} 
+        <strong>Error!</strong> {this.props.message} 
         </div>
       )
     }
