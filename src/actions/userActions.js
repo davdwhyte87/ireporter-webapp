@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import { ToastContainer, toast } from 'react-toastify'
 export const getUsers = () => {
   return async (dispatch) => {
     try {
@@ -13,4 +13,36 @@ export const getUsers = () => {
   }
   }
  
+}
+
+export const signUpUser = (userData) => {
+
+  return async (dispatch) => {
+    dispatch({
+      type: 'LOADING',
+      payload: { loading: true }
+    })
+    try {
+      const { data: { data } } = await axios.post('https://ireporterx.herokuapp.com/api/v1/auth/signup/', userData);
+      //save token data on browser
+      console.log(data)
+      localStorage.setItem('token', data[0].token)
+      localStorage.setItem('user', JSON.stringify(data[0].user))
+      // send data to reducer
+      dispatch({
+        type: 'SIGNUP_USER',
+        payload: { loading: false, token: data.token, success: true }
+      })
+    } catch (e) {
+      let errors;
+      errors = ["An error occurred"]
+      if (e.response) {
+        errors = e.response.data.error
+      }
+      dispatch({
+        type: 'SIGNUP_ERROR',
+        payload: { errors: errors, loading: false }
+      })
+    }
+  } 
 }

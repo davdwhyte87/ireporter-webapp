@@ -7,7 +7,7 @@ import Nav from '../components/Nav'
 
 class Home extends React.Component{
   render() {
-    console.log(this.props)
+    console.log(this.props.users)
     return (
       <div>
         <Nav/>

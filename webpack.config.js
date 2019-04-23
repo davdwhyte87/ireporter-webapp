@@ -21,5 +21,10 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlplugin]
+  plugins: [htmlplugin],
+  devServer: {
+    historyApiFallback: true,
+    port: 8080,
+    historyApiFallback: true
+  },
 };

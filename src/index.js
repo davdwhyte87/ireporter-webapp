@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom'
 import '@babel/polyfill'
 import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import thunk from 'redux-thunk'
-import Root from '../src/components/Root'
-import Home from '../src/components/Home'
+import Routes from '../src/components/Routes'
 import userReducer from '../src/reducers/usersReducer'
 
 const store = createStore(userReducer, compose(
@@ -18,16 +16,8 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <div>
-          <Router>
-            <Root>
-              <Route exact path="/" component={Home}/>
-              {/* <Route path="/signup" component={} /> */}
-            </Root>
-          </Router>
-        </div>
+        <Routes/>
       </Provider>
-  
     );
   }
 }
