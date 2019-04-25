@@ -35,7 +35,7 @@ class Nav extends React.Component{
             <a href="#" onClick={this.toggleNav} className="nav-mobile">☰ menu</a>
             <ul id="l-nav" >
                 <li><Link className="active" to="/">Home</Link></li>
-                <li><a href="records.html">Records</a></li>
+                <li><Link to="/records">Records</Link></li>
                 <li><a href="create-record.html">Create report</a></li>
                 <li><a href="profile.html">Profile</a></li>
             </ul>

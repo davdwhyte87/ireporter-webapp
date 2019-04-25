@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify'
+
 export const getUsers = () => {
   return async (dispatch) => {
     try {
@@ -12,11 +12,9 @@ export const getUsers = () => {
     console.log(e)
   }
   }
- 
 }
 
 export const signUpUser = (userData) => {
-
   return async (dispatch) => {
     dispatch({
       type: 'LOADING',
