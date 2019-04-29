@@ -1,12 +1,4 @@
-const initialState = {
-  users: [],
-  user: {},
-  errors: [],
-  token: null,
-  loading: false,
-  success: false
-}
-
+import initialState from '../store/initialState'
 export default (state = initialState, action = {}) => {
   switch (action.type) {
     case 'GET_USERS':

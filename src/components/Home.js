@@ -10,7 +10,6 @@ class Home extends React.Component{
     console.log(this.props.users)
     return (
       <div>
-        <Nav/>
         <section className='hero'>
           <div className='spx'></div>
           <div className='spx'></div>
