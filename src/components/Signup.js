@@ -47,7 +47,6 @@ class Signup extends React.Component{
     const { email, password } = this.state.data;
     return (
       <div>
-        <Nav />
         <section className="item2">
           <div className="container-center">
               <div className="card">

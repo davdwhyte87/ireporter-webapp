@@ -49,7 +49,6 @@ class Signin extends React.Component{
     const { email, password } = this.state.data;
     return (
       <div>
-        <Nav />
         <section className="item2">
           <div className="container-center">
               <div className="card">
@@ -84,11 +83,11 @@ Signin.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    users: state.users,
-    user: state.user,
-    errors: state.errors,
-    loading: state.loading,
-    success: state.success
+    users: state.usersReducer.users,
+    user: state.usersReducer.user,
+    errors: state.usersReducer.errors,
+    loading: state.usersReducer.loading,
+    success: state.usersReducer.success
   }
 }
 export default connect(() => mapStateToProps, { getUsers, signInUser })(withRouter(Signin))

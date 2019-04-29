@@ -73,6 +73,6 @@ export const signInUser = (userData) => {
         type: 'SIGNIN_ERROR',
         payload: { errors: errors, loading: false }
       })
-    }
+     }
   } 
 }

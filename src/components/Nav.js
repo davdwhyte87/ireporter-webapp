@@ -34,10 +34,10 @@ class Nav extends React.Component{
           <nav className="navbar" id="navbar">
             <a href="#" onClick={this.toggleNav} className="nav-mobile">☰ menu</a>
             <ul id="l-nav" >
-                <li><Link className="active" to="/">Home</Link></li>
-                <li><Link to="/records">Records</Link></li>
-                <li><a href="create-record.html">Create report</a></li>
-                <li><a href="profile.html">Profile</a></li>
+              <li><Link to="/">iReporter</Link></li>
+              <li><Link to="/records">Records</Link></li>
+              <li><a href="create-record.html">Create report</a></li>
+              <li><a href="profile.html">Profile</a></li>
             </ul>
             <ul id="r-nav">
                 <li><a href="#"  onClick={this.logout}>Logout <i className="fa fa-fw fa-sign-out"></i> </a></li>
