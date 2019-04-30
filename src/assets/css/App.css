@@ -142,6 +142,29 @@ body {
       text-align: left;
       color: #03a9f4;
   }
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .upload-btn-wrapper button {
+    cursor: pointer;
+  }
+  
+  .upload-btn-wrapper input[type="file"] {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .input-comment{
+      height: 70px;
+      width: 400px;
+  }
   
   @media only screen and (max-width: 720px){
       .card{
