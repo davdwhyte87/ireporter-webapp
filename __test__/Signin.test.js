@@ -29,6 +29,8 @@ describe('Signin test', () => {
     </Provider>
     );
     expect(wrapper.find('form').exists()).toBe(true);
+    expect(wrapper.find('.input').exists()).toBe(true);
+    expect(wrapper.find('.btn-primary').exists()).toBe(true);
   });
   it('should match snapshot', () => {
     const wrapper = mount(

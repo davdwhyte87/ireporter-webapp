@@ -32,7 +32,7 @@ const Nav = (props) => {
       return(
         <div>
           <nav className="navbar" id="navbar">
-            <a href="#" onClick={() => toggleNav} className="nav-mobile">☰ iReporter</a>
+            <a href="#" onClick={toggleNav} className="nav-mobile">☰ iReporter</a>
             <ul id="l-nav" >
               <li><Link to="/">iReporter</Link></li>
               <li><Link to="/records">Records</Link></li>
@@ -40,7 +40,7 @@ const Nav = (props) => {
               <li><a href="profile.html">Profile</a></li>
             </ul>
             <ul id="r-nav">
-                <li><a href="#"  onClick={() => logout()}>Logout <i className="fa fa-fw fa-sign-out"></i> </a></li>
+                <li><a href="#"  onClick={logout}>Logout <i className="fa fa-fw fa-sign-out"></i> </a></li>
                 <li><a href="#" className="nav-name">{user.firstname} </a></li>
             </ul>
           </nav>
@@ -50,7 +50,7 @@ const Nav = (props) => {
       return (
         <div>
           <nav className="navbar" id="navbar">
-            <a href="#" onClick={() => toggleNav()} className='nav-mobile'>☰ iReporter</a>
+            <a href="#" onClick={toggleNav} className='nav-mobile'>☰ iReporter</a>
             <ul id="l-nav">
                 <li><Link to="/">iReporter</Link></li>
                 <li><Link to="/signin">Signin</Link></li>

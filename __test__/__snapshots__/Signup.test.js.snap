@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signin test should match snapshot 1`] = `
+<div>
+  <section
+    className="item2"
+  >
+    <div
+      className="container-center"
+    >
+      <div
+        className="card"
+      >
+        <h2
+          className="text-center"
+        >
+          Signup
+        </h2>
+        <div
+          className=""
+        >
+          
+          <form
+            id="form"
+          >
+            <div
+              id="flash"
+            />
+            <div
+              className="input-group"
+            >
+              <input
+                className="input"
+                name="firstname"
+                onChange={[Function]}
+                placeholder="First Name"
+                required=""
+                type="text"
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <input
+                className="input"
+                name="lastname"
+                onChange={[Function]}
+                placeholder="Last Name"
+                required=""
+                type="text"
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <input
+                className="input"
+                name="othernames"
+                onChange={[Function]}
+                placeholder="Other Name"
+                required=""
+                type="text"
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <input
+                className="input"
+                name="email"
+                onChange={[Function]}
+                placeholder="Email"
+                required=""
+                type="email"
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <input
+                className="input"
+                name="username"
+                onChange={[Function]}
+                placeholder="Username"
+                required=""
+                type="text"
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <input
+                className="input"
+                name="phone"
+                onChange={[Function]}
+                placeholder="Phone Number"
+                required=""
+                type="number"
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <input
+                className="input"
+                name="password"
+                onChange={[Function]}
+                placeholder="Password"
+                required=""
+                type="password"
+              />
+            </div>
+            <div
+              className="container-center"
+            >
+              <button
+                className="btn-primary"
+                id="signup_btn"
+                onClick={[Function]}
+                type="submit"
+              >
+                Signup
+                <i
+                  className="fa fa-fw fa-edit"
+                />
+              </button>
+            </div>
+            <p>
+              Already have an account? 
+              <a
+                href="/signin"
+                onClick={[Function]}
+              >
+                Signin
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

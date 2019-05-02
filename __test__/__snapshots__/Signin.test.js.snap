@@ -30,7 +30,7 @@ exports[`Signin test should match snapshot 1`] = `
               className="input-group"
             >
               <input
-                className="input"
+                className="input email"
                 name="email"
                 onChange={[Function]}
                 placeholder="Email"
