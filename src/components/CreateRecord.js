@@ -1,8 +1,12 @@
 import React from 'react'
-
+import { getRecords, createRecord } from '../actions/recordActions'
+import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux'
+import propTypes from 'prop-types'
+import Alert from './Alert'
 import '../utils/app'
 
-export default class CreateRecord  extends React.Component {
+class CreateRecord  extends React.Component {
     state = {
         data: {
           title: '',
@@ -14,14 +18,13 @@ export default class CreateRecord  extends React.Component {
     handleImage = async(e) => {
       console.log(e.target.files)
       if (e.target.files && e.target.files[0]) {
+        const { data } = { ...this.state };
         let reader = new FileReader();
-        reader.onload = function(e) {
-          localStorage.setItem('record-image', reader.result);
+        reader.onload =  function(e) {
+            data['image'] = reader.result
         };
         await reader.readAsDataURL(e.target.files[0]);
-        const { data } = { ...this.state };
-        data['image'] = localStorage.getItem('record-image')
-        this.setState({ data })
+        await this.setState({ data })
       }
     }
     handleInputChange = (e) => {
@@ -33,14 +36,19 @@ export default class CreateRecord  extends React.Component {
         e.preventDefault()
         const { data } = this.state
         console.log(data)
+        this.props.createRecord(data)
     }
   render() {
-      console.log(this.state)
+      const {success} = this.props
+      if(success) {
+        this.props.history.push('/records')
+      }
     return (
       <section className="container-center">
         <div className="card">
+        <Alert message={this.props.errors} success={this.props.isError}  />
             <div className="conatiner">
-                <img id="img-preview"  />
+              <img id="img-preview" />
             </div>
             <div className="upload-btn-wrapper" >
                 <button className="btn-primary"><i className="fa fa-fw fa-camera"></i> </button>
@@ -66,7 +74,7 @@ export default class CreateRecord  extends React.Component {
                     </i>
                 </div>
                 <div className="inputBox">
-                    <textarea id="mytextarea" onChange={this.handleInputChange} className="input input-comment" name="comment" placeholder="Content here.."></textarea>
+                    <textarea id="mytextarea" onChange={this.handleInputChange} className="input-comment" name="comment" placeholder="Content here.."></textarea>
                 </div>
                 {/* <div className="input-group">
                     <button className="btn-primary">Get geolocation</button>
@@ -75,7 +83,7 @@ export default class CreateRecord  extends React.Component {
                     <p id="geolocation-display"></p>
                 </div>
                 <div className="container-center">
-                    <button id="create_btn" type="submit" onClick={this.handleSubmit}  className="btn-primary">Create <i className="fa fa-fw fa-plus-square"></i></button>
+                    <button id="create_btn" type="submit" onClick={this.handleSubmit}  className="btn-primary">{ this.props.loading? 'loading...': 'Create'}<i className="fa fa-fw fa-plus-square"></i></button>
                 </div>
             </form>
         </div>
@@ -84,3 +92,20 @@ export default class CreateRecord  extends React.Component {
     
   }
 }
+CreateRecord.propTypes = {
+    createRecord: propTypes.func.isRequired
+  }
+  
+  CreateRecord.defaultValues = {
+    loading: false
+  }
+  const mapStateToProps = state => {
+    return {
+      errors: state.recordsReducer.errors,
+      loading: state.recordsReducer.loading,
+      success: state.recordsReducer.success,
+      records: state.recordsReducer.records
+    }
+  }
+  
+  export default connect(() => mapStateToProps, { createRecord })(withRouter(CreateRecord))

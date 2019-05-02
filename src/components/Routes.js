@@ -6,12 +6,11 @@ import Signin from './Signin'
 import CreateRecord from './CreateRecord'
 import Records from './Records'
 import Nav from './Nav'
+import { connect } from 'react-redux';
 
-function Routes() {
+const Routes = (props) => {
   return (
-    <BrowserRouter>
       <div>
-        <Nav />
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/signup" component={Signup} />
@@ -20,8 +19,10 @@ function Routes() {
           <Route path="/records" component={Records} />
         </Switch>
       </div>
-    </BrowserRouter>
   );
 }
 
-export default Routes;
+const mapStateToProps = state => ({
+ 
+});
+export default connect(() => mapStateToProps, {})(Routes);
