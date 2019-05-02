@@ -1,9 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getUsers } from '../actions/userActions'
-import '../assets/css/App.css'
-import '../assets/css/Style.css'
-import Nav from '../components/Nav'
+import Nav from './Nav'
 
 class Home extends React.Component{
   render() {
