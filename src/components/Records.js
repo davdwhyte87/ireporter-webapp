@@ -44,7 +44,9 @@ class Records extends React.Component {
           ) :
            ('')
           }
-            {this.props.records.map((record, index) => <Record record={record} user={user} key={index}/>)}
+          {this.props.records ?
+            (this.props.records.map((record, index) => <Record record={record} user={user} key={index}/>))
+            : '' }
         </section>
       )
     }

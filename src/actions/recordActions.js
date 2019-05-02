@@ -25,8 +25,9 @@ export const getRecords = () => {
       if (error.response) {
         errors = error.response.data.error
       }
+  
       dispatch({
-        type: 'GET_RECORDS_ERROR',
+        type: 'RECORDS_ERROR',
         payload: { loading: false, success: false, errors: errors }
       })
     }
@@ -44,15 +45,52 @@ export const getRecords = () => {
     } catch(error) {
       ok = false
       dispatch({
-        type: 'GET_RECORDS_ERROR',
+        type: 'RECORDS_ERROR',
         payload: { loading: false, success: false, errors: error.response }
       })
     }
     if (ok) {
       dispatch({
-        type: 'GET_RECORDS_SUCCESS',
+        type: 'RECORDS_SUCCESS',
         payload: { loading: false, succss: true, records: recordsData }
       })
     } 
+  }
+}
+
+export const createRecord = (userData) => {
+  return async (dispatch) => {
+    dispatch({
+      type: 'LOADING',
+      payload: { loading: true }
+    })
+    try {
+      localStorage.removeItem('record-image')
+      let url = 'https://ireporterx.herokuapp.com/api/v1/interventions/'
+      if (userData.type == "intervention") {
+        url = 'https://ireporterx.herokuapp.com/api/v1/interventions/'
+      } else {
+        url = 'https://ireporterx.herokuapp.com/api/v1/red-flags'
+      }
+      const { data: { data } } = await axios.post(url, userData, {
+        headers: {
+          token: localStorage.getItem('token')
+        }
+      });
+      dispatch({
+        type: 'RECORDS_SUCCESS',
+        payload: { loading: false, success: true, records: null }
+      })
+    } catch (e) {
+      let errors;
+      errors = ["An error occurred"]
+      if (e.response) {
+        errors = e.response.data.error
+      }
+      dispatch({
+        type: 'RECORDS_ERROR',
+        payload: { errors: errors, loading: false }
+      })
+    }
   }
 }
