@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create record test should return component 1`] = `
+<section
+  className="container-center create-record"
+>
+  <div
+    className="card"
+  >
+    
+    <div
+      className="conatiner"
+    >
+      <img
+        id="img-preview"
+      />
+    </div>
+    <div
+      className="upload-btn-wrapper"
+    >
+      <button
+        className="btn-primary"
+      >
+        <i
+          className="fa fa-fw fa-camera"
+        />
+         
+      </button>
+      <input
+        id="editImage"
+        onChange={[Function]}
+        type="file"
+      />
+    </div>
+    <form
+      id="form"
+    >
+      <div
+        id="flash"
+      />
+      <input
+        hidden={true}
+        id="editImage"
+        type="file"
+      />
+      <div
+        className="input-group"
+      >
+        <input
+          className="input"
+          name="title"
+          onChange={[Function]}
+          placeholder="Title"
+          required=""
+          type="text"
+        />
+      </div>
+      <div
+        className="input-group"
+      >
+        <select
+          className="input"
+          name="type"
+          onChange={[Function]}
+        >
+          <option
+            value=""
+          >
+            Record type
+          </option>
+          <option
+            value="red-flag"
+          >
+            Red-flag
+          </option>
+          <option
+            value="intervention"
+          >
+            Intervention
+          </option>
+        </select>
+        <i
+          className="fa fa-fw fa-question-circle tooltip"
+        >
+          <span
+            className="tooltiptext"
+          >
+            A red-flag is an incident linked to curroption eg a public officer talking about curropt deeds. An intervention is a call to government agencies eg. bad roads, drug abuse, bad traffic.
+          </span>
+        </i>
+      </div>
+      <div
+        className="inputBox"
+      >
+        <textarea
+          className="input-comment"
+          id="mytextarea"
+          name="comment"
+          onChange={[Function]}
+          placeholder="Content here.."
+        />
+      </div>
+      <div
+        className="input-group"
+      >
+        <p
+          id="geolocation-display"
+        />
+      </div>
+      <div
+        className="container-center"
+      >
+        <button
+          className="btn-primary"
+          id="create_btn"
+          onClick={[Function]}
+          type="submit"
+        >
+          Create
+          <i
+            className="fa fa-fw fa-plus-square"
+          />
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+`;

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav test should match snapshot 1`] = `
+<div>
+  <nav
+    className="navbar"
+    id="navbar"
+  >
+    <a
+      className="nav-mobile"
+      href="#"
+      onClick={[Function]}
+    >
+      ☰ iReporter
+    </a>
+    <ul
+      id="l-nav"
+    >
+      <li>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          iReporter
+        </a>
+      </li>
+      <li>
+        <a
+          href="/signin"
+          onClick={[Function]}
+        >
+          Signin
+        </a>
+      </li>
+      <li>
+        <a
+          href="/signup"
+          onClick={[Function]}
+        >
+          Signup
+        </a>
+      </li>
+    </ul>
+    <ul
+      id="r-nav"
+    />
+  </nav>
+</div>
+`;

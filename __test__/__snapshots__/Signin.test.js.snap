@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signin test should match snapshot 1`] = `
+<div>
+  <section
+    className="item2"
+  >
+    <div
+      className="container-center"
+    >
+      <div
+        className="card"
+      >
+        <h2
+          className="text-center"
+        >
+          Signup
+        </h2>
+        <div
+          className=""
+        >
+          
+          <form
+            id="form"
+          >
+            <div
+              id="flash"
+            />
+            <div
+              className="input-group"
+            >
+              <input
+                className="input"
+                name="email"
+                onChange={[Function]}
+                placeholder="Email"
+                required=""
+                type="email"
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <input
+                className="input"
+                name="password"
+                onChange={[Function]}
+                placeholder="Password"
+                required=""
+                type="password"
+              />
+            </div>
+            <div
+              className="container-center"
+            >
+              <button
+                className="btn-primary"
+                onClick={[Function]}
+                type="submit"
+              >
+                Signin
+                <i
+                  className="fa fa-fw fa-edit"
+                />
+              </button>
+            </div>
+            <p>
+              Already have an account? 
+              <a
+                href="/signup"
+                onClick={[Function]}
+              >
+                Signup
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

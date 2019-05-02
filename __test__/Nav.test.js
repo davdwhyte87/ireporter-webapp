@@ -1,12 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Home from '../src/components/Home';
+import Nav from '../src/components/Nav';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
+import renderer from 'react-test-renderer';
 
-describe('Home test', () => {
+describe('Nav test', () => {
   const mockStore = configureStore([thunk]);
   const store = mockStore({
     recordsReducer: {
@@ -17,10 +18,21 @@ describe('Home test', () => {
     const wrapper = mount(
       <Provider store={store}>
       <BrowserRouter>
-        <Home />
+        <Nav />
       </BrowserRouter>
     </Provider>
     );
-    expect(wrapper.find('.hero').exists()).toBe(true);
+    expect(wrapper.find('.navbar').exists()).toBe(true);
   });
+  it('should match snapshot', () => {
+    const wrapper = mount(
+      <Provider store={store}>
+      <BrowserRouter>
+        <Nav />
+      </BrowserRouter>
+    </Provider>
+    );
+    const tree = renderer.create(wrapper).toJSON();
+    expect(tree).toMatchSnapshot();
+  })
 });

@@ -4,9 +4,6 @@ import propTypes from 'prop-types'
 import { toast } from 'react-toastify'
 import { getRecords } from '../actions/recordActions'
 import { Link, withRouter } from 'react-router-dom';
-import Style from '../assets/css/App.css'
-import '../assets/css/Style.css'
-import Nav from '../components/Nav'
 import Alert from './Alert'
 import Record from './Record'
 

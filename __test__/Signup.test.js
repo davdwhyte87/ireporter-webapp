@@ -1,26 +1,31 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Home from '../src/components/Home';
+import Signup from '../src/components/Signup';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 
-describe('Home test', () => {
+describe('Signin test', () => {
   const mockStore = configureStore([thunk]);
   const store = mockStore({
     recordsReducer: {
       records: []
+    },
+    usersReducer: {
+      errors: [],
+      loading: false,
+      success: false
     }
   });
   it('should render without crashing', () => {
     const wrapper = mount(
       <Provider store={store}>
       <BrowserRouter>
-        <Home />
+        <Signup />
       </BrowserRouter>
     </Provider>
     );
-    expect(wrapper.find('.hero').exists()).toBe(true);
+    expect(wrapper.find('form').exists()).toBe(true);
   });
 });

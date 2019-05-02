@@ -1,12 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Home from '../src/components/Home';
+import Records from '../src/components/Records';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 
-describe('Home test', () => {
+describe('Records test', () => {
   const mockStore = configureStore([thunk]);
   const store = mockStore({
     recordsReducer: {
@@ -17,10 +17,10 @@ describe('Home test', () => {
     const wrapper = mount(
       <Provider store={store}>
       <BrowserRouter>
-        <Home />
+        <Records />
       </BrowserRouter>
     </Provider>
     );
-    expect(wrapper.find('.hero').exists()).toBe(true);
+    expect(wrapper.find('.records').exists()).toBe(true);
   });
 });
