@@ -34,3 +34,6 @@ Redux: State management library
 - To run test, run `yarn test`
 ## Building
 - To build the project, run `yarn run build`
+
+## Hosted application
+- Here is the link to the app online `https://ireporterxweb.herokuapp.com/`
