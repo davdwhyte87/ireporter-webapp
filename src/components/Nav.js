@@ -1,11 +1,7 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { Link, withRouter } from 'react-router-dom'
-import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-function authCheckUser() {
-  console.log('sjks')
-}
+
 const Nav = (props) => {
   const user = JSON.parse(localStorage.getItem('user'));
   const authCheckUser = () => {
@@ -17,6 +13,7 @@ const Nav = (props) => {
     }
   }
   const toggleNav = (e) => {
+    console.log(e)
     console.log(e.target.parentElement)
     let navbar = e.target.parentElement
     if (navbar.className === 'navbar') {
@@ -35,7 +32,7 @@ const Nav = (props) => {
       return(
         <div>
           <nav className="navbar" id="navbar">
-            <a href="#" onClick={() => toggleNav()} className="nav-mobile">☰ menu</a>
+            <a href="#" onClick={() => toggleNav} className="nav-mobile">☰ iReporter</a>
             <ul id="l-nav" >
               <li><Link to="/">iReporter</Link></li>
               <li><Link to="/records">Records</Link></li>
@@ -53,9 +50,9 @@ const Nav = (props) => {
       return (
         <div>
           <nav className="navbar" id="navbar">
-            <a href="#" onClick={() => toggleNav()} className='nav-mobile'>☰ menu</a>
+            <a href="#" onClick={() => toggleNav()} className='nav-mobile'>☰ iReporter</a>
             <ul id="l-nav">
-                <li><Link className="active" to="/">Home</Link></li>
+                <li><Link to="/">iReporter</Link></li>
                 <li><Link to="/signin">Signin</Link></li>
                 <li><Link to="/signup">Signup</Link></li>
             </ul>
@@ -65,9 +62,5 @@ const Nav = (props) => {
         </div>
       )
     }
-}
-const mapStateToProps = state => {
-  return {
-  }
 }
 export default Nav

@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
 import propTypes from 'prop-types'
 import Alert from './Alert'
-import '../utils/app'
 
 class CreateRecord  extends React.Component {
     state = {
@@ -16,7 +15,6 @@ class CreateRecord  extends React.Component {
         },
       }
     handleImage = async(e) => {
-      console.log(e.target.files)
       if (e.target.files && e.target.files[0]) {
         const { data } = { ...this.state };
         let reader = new FileReader();
@@ -35,7 +33,6 @@ class CreateRecord  extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const { data } = this.state
-        console.log(data)
         this.props.createRecord(data)
     }
   render() {
@@ -44,7 +41,7 @@ class CreateRecord  extends React.Component {
         this.props.history.push('/records')
       }
     return (
-      <section className="container-center">
+      <section className="container-center create-record">
         <div className="card">
         <Alert message={this.props.errors} success={this.props.isError}  />
             <div className="conatiner">

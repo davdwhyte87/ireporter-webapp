@@ -175,10 +175,24 @@ ul li {
     text-align: left;
     color: #03a9f4;
 }
+
+.input{
+	padding: 12px;
+	margin: 5px;
+	width: 400px;
+	display: inline-block;
+	font-size: 15px;
+}
   
 @media only screen and (max-width: 720px){
     .card{
         width: 100%;
+        display: block;
+    }
+    .input {
+        border-style: solid;
+        border: grey;
+        border-width: 5px;
     }
     .mini-card {
         width: 100%;

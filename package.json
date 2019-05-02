@@ -8,17 +8,22 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest",
+    "start:prod": "node server.js",
+    "test:coverage": "jest --coverage --colors --updateSnapshot"
   },
   "dependencies": {
     "@babel/core": "^7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/polyfill": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "axios": "^0.18.0",
     "babel-loader": "^8.0.0-beta.6",
+    "babel-polyfill": "^6.26.0",
     "css-loader": "^2.1.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "html-webpack-plugin": "^3.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
@@ -27,6 +32,7 @@
     "react-router-dom": "^5.0.0",
     "react-toastify": "^5.1.0",
     "redux": "^4.0.1",
+    "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0",
     "style-loader": "^0.23.1",
     "webpack-dev-server": "^3.2.1"
@@ -35,7 +41,7 @@
     "babel-jest": "^24.6.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "jest": "^24.6.0",
+    "jest": "^24.7.1",
     "react-test-renderer": "^16.8.6",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"

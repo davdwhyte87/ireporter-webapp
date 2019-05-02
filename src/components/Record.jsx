@@ -1,6 +1,4 @@
 import React from 'react'
-import Style from '../assets/css/App.css'
-import '../assets/css/Style.css'
 
 export default class  Record extends React.Component {
   render() {
