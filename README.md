@@ -24,15 +24,13 @@ Users can post intervention and red-flag records<br/>
 
 ## Technologies used
 
-Modern JavaScript technologies were adopted for this project
-
-ES2015: Also known as ES6 or ES2015 or ECMASCRIPT 6, is a new and widely used version of Javascript
-that makes it compete healthily with other languages.
-
+Javascript
+Nodejs
 React.js: SPA frontend framework
-
 Redux: State management library
 
 
 ## Testing
 - To run test, run `yarn test`
+## Building
+- To build the project, run `yarn run build`
