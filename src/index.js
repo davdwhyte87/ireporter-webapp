@@ -8,6 +8,8 @@ import thunk from 'redux-thunk'
 import Routes from '../src/components/Routes'
 import indexReducer from '../src/reducers/index'
 import Nav from './components/Nav'
+import './assets/css/App.css'
+import './assets/css/Style.css'
 const store = createStore(indexReducer, compose(
   applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

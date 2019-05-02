@@ -23,4 +23,49 @@ describe('Records test', () => {
     );
     expect(wrapper.find('.records').exists()).toBe(true);
   });
+  it('should render without crashing', () => {
+    const newstore = mockStore({
+      recordsReducer: {
+        loading: true,
+        records: []
+      }
+    });
+    const wrapper = mount(
+      <Provider store={newstore}>
+      <BrowserRouter>
+        <Records />
+      </BrowserRouter>
+    </Provider>
+    );
+    expect(wrapper.find('.records').exists()).toBe(true);
+  });
+  it('should render without crashing', () => {
+    const newstoreWithRecords = mockStore({
+      recordsReducer: {
+        loading: true,
+        records: [
+          {
+            title: "Heeolan Manne!",
+            status: "rejected",
+            createdBy: 2,
+            image: "djdjdkdk.png"
+          },
+          {
+            title: "Heeolan Manne!",
+            status: "rejected",
+            createdBy: 2,
+            image: "djdjdkdk.png"
+          },
+        ]
+      }
+    });
+    const wrapper = mount(
+      <Provider store={newstoreWithRecords}>
+      <BrowserRouter>
+        <Records />
+      </BrowserRouter>
+    </Provider>
+    );
+    expect(wrapper.find('.records').exists()).toBe(true);
+  });
 });

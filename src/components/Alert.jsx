@@ -9,7 +9,6 @@ class Alert extends React.PureComponent{
         if(onDismiss) onDismiss()
     }
     render(){
-      console.log(this.props)
       if(!this.props.message){
         return ('')
       }
@@ -18,7 +17,6 @@ class Alert extends React.PureComponent{
       for (i; i<this.props.message.length; i++){
         errorMessages.push(this.props.message[i])
     }
-    console.log(errorMessages)
     if (this.props.message.length === 0) {
       return ('')
     }
@@ -26,7 +24,7 @@ class Alert extends React.PureComponent{
           if (typeof this.props.message === 'object') {
             return (
               <div id="errf" className="alert error alert-success alert-dismissible fade show" role="alert">
-                <strong>Error!</strong> 
+                <strong></strong> 
                 <ul>
                   {errorMessages.map((message, index)=> <div key={index}>{message}</div>)}
                 </ul>

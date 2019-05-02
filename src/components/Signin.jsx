@@ -30,7 +30,6 @@ class Signin extends React.Component{
       username: this.state.data.username,
       phone: this.state.data.phone,
     }
-    console.log(userData)
     this.props.signInUser(userData)
   }
   handleChange = (e) => {
@@ -40,7 +39,6 @@ class Signin extends React.Component{
    
   };
   render() {
-  console.log(this.props)
   if (this.props.success) {
     this.props.history.push('/')
   }
@@ -56,7 +54,7 @@ class Signin extends React.Component{
                     <form id="form">
                       <div id="flash"></div>
                       <div className="input-group">
-                        <input type="email" name="email" onChange={this.handleChange}   className="input" required="" placeholder="Email" />
+                        <input type="email" name="email" onChange={this.handleChange}   className="input email" required="" placeholder="Email" />
                       </div>
                       <div className="input-group">
                         <input type="password" name="password" onChange={this.handleChange}  className="input" required="" placeholder="Password" />

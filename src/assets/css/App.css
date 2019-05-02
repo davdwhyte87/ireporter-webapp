@@ -13,6 +13,7 @@ body {
     transition: 0.3s;
     padding: 0px;
     display: flex;
+    width: 30%;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -94,8 +95,12 @@ body {
     cursor: pointer;
   }
   .input-comment{
-      height: 70px;
+      height: 200px;
       width: 400px;
+      font-size: 15px;
+      padding: 12px;
+      margin: 5px;
+      display: inline-block;
   }
 .record-image{
     width: 100%;
@@ -188,13 +193,17 @@ ul li {
     .card{
         width: 100%;
         display: block;
+        /* padding: 0px; */
     }
     .input {
         border-style: solid;
-        border: grey;
-        border-width: 5px;
+        border-color: grey;
+        border-width: 1px;
     }
     .mini-card {
+        width: 100%;
+    }
+    .input-comment {
         width: 100%;
     }
     .record-image{

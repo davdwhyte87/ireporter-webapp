@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
+import renderer from 'react-test-renderer';
 
 describe('Signin test', () => {
   const mockStore = configureStore([thunk]);
@@ -28,4 +29,15 @@ describe('Signin test', () => {
     );
     expect(wrapper.find('form').exists()).toBe(true);
   });
+  it('should match snapshot', () => {
+    const wrapper = mount(
+      <Provider store={store}>
+      <BrowserRouter>
+        <Signup />
+      </BrowserRouter>
+    </Provider>
+    );
+    const tree = renderer.create(wrapper).toJSON();
+    expect(tree).toMatchSnapshot();
+  })
 });
