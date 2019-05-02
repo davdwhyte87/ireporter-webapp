@@ -1,5 +1,5 @@
 # iReporter
-
+[![Test Coverage](https://api.codeclimate.com/v1/badges/be9bffa5772a9547ca50/test_coverage)](https://codeclimate.com/github/davdwhyte87/ireporter-webapp/test_coverage)
 
 iReporter is a web app that enables citizens to report bad political practices and issues to the government
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1556792026600" clover="3.2.0">
-  <project timestamp="1556792026600" name="All files">
+<coverage generated="1556797073309" clover="3.2.0">
+  <project timestamp="1556797073310" name="All files">
     <metrics statements="79" coveredstatements="55" conditionals="34" coveredconditionals="18" methods="26" coveredmethods="20" elements="139" coveredelements="93" complexity="0" loc="79" ncloc="79" packages="1" files="7" classes="7"/>
     <file name="Alert.jsx" path="/Users/davidwhyte-john/Documents/projects/nodejs/ireporter-webapp/src/components/Alert.jsx">
       <metrics statements="19" coveredstatements="14" conditionals="10" coveredconditionals="6" methods="3" coveredmethods="2"/>
