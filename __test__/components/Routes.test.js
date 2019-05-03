@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Routes from '../src/components/Routes';
+import Routes from '../../src/components/Routes';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';

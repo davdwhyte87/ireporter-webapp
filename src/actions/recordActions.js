@@ -94,3 +94,34 @@ export const createRecord = (userData) => {
     }
   }
 }
+
+export const getRecord = (id) => {
+  return async (dispatch) => {
+    dispatch({
+      type: 'LOADING',
+      payload: { loading: true }
+    })
+    try {
+      const { data: { data } } = await axios.get('https://ireporterx.herokuapp.com/api/v1/interventions/'+id, {
+        headers: {
+          token: localStorage.getItem('token')
+        }
+      });
+      console.log(data[0] )
+      dispatch({
+        type: 'RECORD_SUCCESS',
+        payload: { loading: false, success: true, record: data[0] }
+      })
+    } catch(error) {
+      let errors;
+      errors = ["An error occurred"]
+      if (error.response) {
+        errors = error.response.data.error
+      }
+      dispatch({
+        type: 'RECORDS_ERROR',
+        payload: { errors: errors, loading: false }
+      })
+    }
+  }
+}

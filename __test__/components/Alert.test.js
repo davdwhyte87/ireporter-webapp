@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Alert from '../src/components/Alert';
+import Alert from '../../src/components/Alert';
 
 describe('Home test', () => {
   it('should render without crashing', () => {

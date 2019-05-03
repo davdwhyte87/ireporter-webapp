@@ -5,6 +5,7 @@ const initialState = {
   token: null,
   loading: false,
   success: false,
-  records: []
+  records: [],
+  record: {}
 }
 export default initialState;
