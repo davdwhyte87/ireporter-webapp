@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { getUsers } from '../actions/userActions'
-import Nav from './Nav'
+
 
 class Home extends React.Component{
   render() {
@@ -14,7 +15,7 @@ class Home extends React.Component{
           <div className='spx'></div>
           <div className='spx'></div>
           <h2>See something? say something.</h2>
-          <a href="sign-up.html"><button className='cta'>Register ⟶</button></a>
+          <Link to="/signup"><button className='cta'>Register ⟶</button></Link>
         </section>
       </div>
     )

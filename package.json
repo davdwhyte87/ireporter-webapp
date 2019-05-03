@@ -9,6 +9,7 @@
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
     "test": "jest -u",
+    "postinstall": "npm run build",
     "start:prod": "node server.js",
     "test:coverage": "jest --coverage --colors --updateSnapshot"
   },
