@@ -5,7 +5,7 @@ export const getRecords = () => {
     let recordsData = []
     let ok = true
     dispatch({
-      type: 'LOADING',
+      type: 'RECORDS_LOADING',
       payload: { loading: true }
     })
     try {
@@ -61,7 +61,7 @@ export const getRecords = () => {
 export const createRecord = (userData) => {
   return async (dispatch) => {
     dispatch({
-      type: 'LOADING',
+      type: 'RECORDS_LOADING',
       payload: { loading: true }
     })
     try {
@@ -78,8 +78,8 @@ export const createRecord = (userData) => {
         }
       });
       dispatch({
-        type: 'RECORDS_SUCCESS',
-        payload: { loading: false, success: true, records: null }
+        type: 'RECORD_SUCCESS',
+        payload: { loading: false, success: true, records: null, record: data[0]}
       })
     } catch (e) {
       let errors;
@@ -98,7 +98,7 @@ export const createRecord = (userData) => {
 export const getRecord = (id) => {
   return async (dispatch) => {
     dispatch({
-      type: 'LOADING',
+      type: 'RECORDS_LOADING',
       payload: { loading: true }
     })
     try {

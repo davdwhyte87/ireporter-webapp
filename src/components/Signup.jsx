@@ -46,7 +46,7 @@ class Signup extends React.Component{
       <div>
         <section className="item2">
           <div className="container-center">
-              <div className="card">
+              <div className="card col-5">
                 <h2 className="text-center">Signup</h2>
                   <div className="">
                   <Alert message={this.props.errors} success={this.props.isError}  />

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { getUsers } from '../actions/userActions'
+
 
 
 class Home extends React.Component{
@@ -28,8 +28,5 @@ class Home extends React.Component{
 }
 
 const mapStateToProps = state => {
-  return {
-    users: state.users
-  }
 }
-export default connect(() => mapStateToProps, { getUsers })(Home)
+export default connect(() => mapStateToProps, {})(Home)

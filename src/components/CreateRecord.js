@@ -38,25 +38,23 @@ class CreateRecord  extends React.Component {
   render() {
       const {success} = this.props
       if(success) {
-        this.props.history.push('/records')
+        this.props.history.push(`/record/${this.props.record.id}`)
       }
     return (
       <section className="container-center create-record">
-        <div className="card">
+        <div className="card col-9">
         <Alert message={this.props.errors} success={this.props.isError}  />
             <div className="conatiner">
               <img id="img-preview" />
             </div>
-            <div className="upload-btn-wrapper" >
-                <button className="btn-primary"><i className="fa fa-fw fa-camera"></i> </button>
-                <input type="file" id="editImage" onChange={this.handleImage} />
-            </div>
+          
             <form id="form">
                 <div id="flash"></div> 
                 <input type="file" id="editImage" hidden />
                 <div className="input-group">
                     <input type="text" name="title" onChange={this.handleInputChange} className="input" required="" placeholder="Title" />
                 </div>
+
                 <div className="input-group">
                     <select className="input" name="type" onChange={this.handleInputChange} >
                         <option value="">Record type</option>
@@ -78,8 +76,12 @@ class CreateRecord  extends React.Component {
                 </div> */}
                 <div className="input-group">
                     <p id="geolocation-display"></p>
+                    <div className="upload-btn-wrapper" >
+                <button className="btn-primary"><i className="fa fa-fw fa-camera"></i> </button>
+                  <input type="file" id="editImage" onChange={this.handleImage} />
                 </div>
-                <div className="container-center">
+                </div>
+                <div className="">
                     <button id="create_btn" type="submit" onClick={this.handleSubmit}  className="btn-primary">{ this.props.loading? 'loading...': 'Create'}<i className="fa fa-fw fa-plus-square"></i></button>
                 </div>
             </form>
@@ -101,7 +103,8 @@ CreateRecord.propTypes = {
       errors: state.recordsReducer.errors,
       loading: state.recordsReducer.loading,
       success: state.recordsReducer.success,
-      records: state.recordsReducer.records
+      records: state.recordsReducer.records,
+      record: state.recordsReducer.record
     }
   }
   
