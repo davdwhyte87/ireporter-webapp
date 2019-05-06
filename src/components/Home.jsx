@@ -6,7 +6,7 @@ import { getUsers } from '../actions/userActions'
 
 class Home extends React.Component{
   render() {
-    console.log(this.props.users)
+    const user = localStorage.getItem('user')
     return (
       <div>
         <section className='hero'>
@@ -15,7 +15,12 @@ class Home extends React.Component{
           <div className='spx'></div>
           <div className='spx'></div>
           <h2>See something? say something.</h2>
-          <Link to="/signup"><button className='cta'>Register ⟶</button></Link>
+          {user? 
+          (<Link to="/create"><button className='cta'>Report ⟶</button></Link>)
+            : (
+             <Link to="/signup"><button className='cta'>Register ⟶</button></Link>
+            )
+          }
         </section>
       </div>
     )
