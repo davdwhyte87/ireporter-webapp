@@ -9,7 +9,7 @@ exports[`Signin test should match snapshot 1`] = `
       className="container-center"
     >
       <div
-        className="card"
+        className="card col-5"
       >
         <h2
           className="text-center"

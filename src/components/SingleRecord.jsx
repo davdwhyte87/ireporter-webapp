@@ -17,7 +17,6 @@ class SingleRecord extends React.Component {
   }
   render() {
     const user = JSON.parse(localStorage.getItem('user'));
-    console.log(this.props)
     if (this.props.loading) {
       return (
         <section className="records" id="records">

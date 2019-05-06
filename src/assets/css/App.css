@@ -164,6 +164,7 @@ body {
 }
 .rc-text {
     padding: 20px;
+    overflow: hidden;
 }
 
 ul {

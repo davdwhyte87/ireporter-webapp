@@ -5,7 +5,7 @@ exports[`Create record test should return component 1`] = `
   className="container-center create-record"
 >
   <div
-    className="card"
+    className="card col-9"
   >
     
     <div
@@ -13,23 +13,6 @@ exports[`Create record test should return component 1`] = `
     >
       <img
         id="img-preview"
-      />
-    </div>
-    <div
-      className="upload-btn-wrapper"
-    >
-      <button
-        className="btn-primary"
-      >
-        <i
-          className="fa fa-fw fa-camera"
-        />
-         
-      </button>
-      <input
-        id="editImage"
-        onChange={[Function]}
-        type="file"
       />
     </div>
     <form
@@ -106,9 +89,26 @@ exports[`Create record test should return component 1`] = `
         <p
           id="geolocation-display"
         />
+        <div
+          className="upload-btn-wrapper"
+        >
+          <button
+            className="btn-primary"
+          >
+            <i
+              className="fa fa-fw fa-camera"
+            />
+             
+          </button>
+          <input
+            id="editImage"
+            onChange={[Function]}
+            type="file"
+          />
+        </div>
       </div>
       <div
-        className="container-center"
+        className=""
       >
         <button
           className="btn-primary"

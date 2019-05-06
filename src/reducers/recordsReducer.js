@@ -2,7 +2,7 @@ import initialState from '../store/initialState'
  
 export default (state = initialState, action = {}) => {
   switch (action.type) {
-    case 'LOADING':
+    case 'RECORDS_LOADING':
       return { loading: action.payload.loading }
     case 'RECORDS_SUCCESS':
       return { loading: action.payload.loading, success: action.payload.success, records: action.payload.records}

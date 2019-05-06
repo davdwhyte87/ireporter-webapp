@@ -19,15 +19,17 @@ yarn install
 ## Features
 Below are the features of iReporter.
 
-Users can signup and login<br/>
-Users can post intervention and red-flag records<br/>
+- Users can signup and login<br/>
+- Users can post intervention and red-flag records<br/>
+- Users can logout
+- Users can view a single record
 
 ## Technologies used
 
-Javascript
-Nodejs
-React.js: SPA frontend framework
-Redux: State management library
+- Javascript
+- Nodejs
+- React.js: SPA frontend framework
+- Redux: State management library
 
 
 ## Testing

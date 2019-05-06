@@ -23,8 +23,6 @@ class Records extends React.Component {
       console.log('TOAST')
       toast.error('njknkjnnkjnjk')
     }
-    console.log(this.props)
-    toast.error('njknkjnnkjnjk')
     if (this.props.loading) {
       return (
         <section className="records" id="records">

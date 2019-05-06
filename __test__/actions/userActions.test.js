@@ -26,8 +26,8 @@ describe('signinUser()', () => {
       data: { ...successResponse },
     }));
     await signInUser()(dispatch)
-    expect(dispatch.mock.calls[0][0].type).toEqual('LOADING')
-    expect(dispatch.mock.calls[1][0].type).toEqual('SIGNIN_USER')
+    expect(dispatch.mock.calls[0][0].type).toEqual('USER_LOADING')
+    expect(dispatch.mock.calls[1][0].type).toEqual('SIGNIN_USER_SUCCESS')
   });
 });
 
@@ -48,7 +48,7 @@ describe('signupUser()', () => {
       data: { ...successResponse },
     }));
     await signUpUser()(dispatch);
-    expect(dispatch.mock.calls[0][0].type).toEqual('LOADING')
-    expect(dispatch.mock.calls[1][0].type).toEqual('SIGNUP_USER')
+    expect(dispatch.mock.calls[0][0].type).toEqual('USER_LOADING')
+    expect(dispatch.mock.calls[1][0].type).toEqual('SIGNUP_USER_SUCCESS')
   });
 });

@@ -17,7 +17,7 @@ export const getUsers = () => {
 export const signUpUser = (userData) => {
   return async (dispatch) => {
     dispatch({
-      type: 'LOADING',
+      type: 'USER_LOADING',
       payload: { loading: true }
     })
     try {
@@ -28,7 +28,7 @@ export const signUpUser = (userData) => {
       localStorage.setItem('user', JSON.stringify(data[0].user))
       // send data to reducer
       dispatch({
-        type: 'SIGNUP_USER',
+        type: 'SIGNUP_USER_SUCCESS',
         payload: { loading: false, token: data.token, success: true }
       })
     } catch (e) {
@@ -49,7 +49,7 @@ export const signUpUser = (userData) => {
 export const signInUser = (userData) => {
   return async (dispatch) => {
     dispatch({
-      type: 'LOADING',
+      type: 'USER_LOADING',
       payload: { loading: true }
     })
     try {
@@ -60,7 +60,7 @@ export const signInUser = (userData) => {
       localStorage.setItem('user', JSON.stringify(data[0].user))
       // send data to reducer
       dispatch({
-        type: 'SIGNIN_USER',
+        type: 'SIGNIN_USER_SUCCESS',
         payload: { loading: false, token: data.token, success: true }
       })
     } catch (e) {
